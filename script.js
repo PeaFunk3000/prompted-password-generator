@@ -154,7 +154,10 @@ function generatePassword() {
     for (let index = password.length; index < passOptions.passLength; index++) {
         password += (getRandom(charPool));
     }
-
+    // convert password into array, hoist shuffleOrder function to randomise password string order, change back into a string and return shuffled password
+    var passwordArr = password.split('');
+    shuffleOrder(passwordArr);
+    password = passwordArr.join('');
     return password;
 }
 
@@ -173,8 +176,6 @@ function shuffleOrder(values) {
     return values
 }
 
-var shuffle = ['a','b','c','d','e'];
-console.log(shuffleOrder(shuffle));
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
