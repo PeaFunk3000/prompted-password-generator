@@ -153,8 +153,12 @@ function generatePassword() {
         password += (getRandom(numericCharacters));
         charPool = charPool.concat(numericCharacters);
     }
-    console.log(password)
-    console.log(charPool)
+    // for loop to add random characters from charPool array to password, until user entered passLength met
+    for (let index = password.length; index < passOptions.passLength; index++) {
+        password+=(getRandom(charPool));
+    }
+    console.log(password);
+    return password;
 }
 
 
