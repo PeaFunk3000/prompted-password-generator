@@ -90,11 +90,34 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   function getPasswordOptions() {
+    // while passLength outside of aletered value range, do prompt for password length input 
     do {
         alert("Your password must be at least 10 and no more than 64 characters");
         passLength = prompt("How long would you like your password?");
     }
     while (passLength < 10 || passLength > 64);
+    // define variables for charactertypes in passwordoptions as boolean and false
+    var hasUpper = false
+    var hasLower = false
+    var hasSpecial = false
+    var hasNumeric = false
+    // while charactertype variables are false, alert and run confirms to define charactertype (forces at least one character type via do-while) 
+    do {
+        alert("Your password must specify at lease one character type")
+        hasUpper = confirm("Should it contain uppercase characters?")
+        hasLower = confirm("Should it contain lowercase characters?")
+        hasSpecial = confirm("Should it contain special characters?")
+        hasNumeric = confirm("Should it contain numeric characters?")
+    }
+    while (!hasUpper && !hasLower && !hasSpecial && !hasNumeric);
+    // return object containing character type password options
+    return {
+        "passLength": passLength,
+        "hasUpper": hasUpper,
+        "hasLower": hasLower,
+        "hasSpecial": hasSpecial,
+        "hasNumeric": hasNumeric
+    }
   }
   
   // Function for getting a random element from an array
