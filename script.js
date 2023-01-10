@@ -125,9 +125,6 @@ function getRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// TO BE REMOVED BEFORE DEPLOYING - check on getRandom 
-console.log(getRandom(upperCasedCharacters));
-
 // Function to generate password with user input
 function generatePassword() {
     // variables defined for password, character pool and password options (calling getPasswordOptions function to return obj)
@@ -155,12 +152,29 @@ function generatePassword() {
     }
     // for loop to add random characters from charPool array to password, until user entered passLength met
     for (let index = password.length; index < passOptions.passLength; index++) {
-        password+=(getRandom(charPool));
+        password += (getRandom(charPool));
     }
-    console.log(password);
+
     return password;
 }
 
+// function to jumble password
+function shuffleOrder(values) {
+    let index = values.length,
+        randomIndex;
+    // where there remain elements to shuffle
+    while (index != 0) {
+        // pick a remaining element
+        randomIndex = Math.floor(Math.random() * index);
+        index--;
+        // swap with current element
+        [values[index], values[randomIndex]] = [values[randomIndex], values[index]];
+    }
+    return values
+}
+
+var shuffle = ['a','b','c','d','e'];
+console.log(shuffleOrder(shuffle));
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');
