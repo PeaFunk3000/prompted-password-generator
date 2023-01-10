@@ -90,7 +90,11 @@ var specialCharacters = [
   
   // Function to prompt user for password options
   function getPasswordOptions() {
-  
+    do {
+        alert("Your password must be at least 10 and no more than 64 characters");
+        passLength = prompt("How long would you like your password?");
+    }
+    while (passLength < 10 || passLength > 64);
   }
   
   // Function for getting a random element from an array
