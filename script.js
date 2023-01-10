@@ -119,8 +119,6 @@ function getPasswordOptions() {
         "hasNumeric": hasNumeric
     }
 }
-// TO BE REMOVED BEFORE DEPLOYING - check on getPasswordOptions
-console.log(getPasswordOptions);
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -128,7 +126,7 @@ function getRandom(arr) {
 }
 
 // TO BE REMOVED BEFORE DEPLOYING - check on getRandom 
-console.log(getRandom(upperCasedCharacters);)
+console.log(getRandom(upperCasedCharacters));
 
 // Function to generate password with user input
 function generatePassword() {
@@ -148,8 +146,8 @@ function generatePassword() {
         charPool = charPool.concat(lowerCasedCharacters);
     }
     if (passOptions.hasSpecial) {
-        password += (getRandom(specialCasedCharacters));
-        charPool = charPool.concat(specialCasedCharacters);
+        password += (getRandom(specialCharacters));
+        charPool = charPool.concat(specialCharacters);
     }
     if (passOptions.hasNumeric) {
         password += (getRandom(numericCharacters));
