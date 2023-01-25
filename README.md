@@ -5,7 +5,7 @@ A random password generator, based on JS prompts for user input regarding passwo
 
 The following image shows the web application's appearance and functionality:
 <br>
-![password generator screenshot](./assets/pw_generator_alert2.JPG)
+![password generator screenshot](./assets/imgs/pw_generator_alert2.JPG)
 <br>
 
 This project creates an application that an employee can use to generate a random password based on criteria they’ve selected - password length and character type(s) - which are defined by the user via a series of JavaScript prompts. This app runs in the browser, and features dynamically updated HTML powered by JavaScript code. 
